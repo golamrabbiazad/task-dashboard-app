@@ -8,6 +8,7 @@ import {
   CalendarIcon,
   ChatIcon,
 } from "../../icons";
+import { Modal } from "./modal";
 
 export function Card() {
   const [isModalOpen, setIsModalOpen] = createSignal(false);
@@ -74,7 +75,11 @@ export function Card() {
           >
             <PaperclipIcon size={16} />
           </div>
-          <p class="text-sm font-medium">25</p>
+          <p class="text-sm font-medium">
+            {window.localStorage.getItem("attachments")
+              ? JSON.parse(window.localStorage.getItem("attachments")!).length
+              : 0}
+          </p>
         </div>
 
         <div class="flex gap-1 items-center">
@@ -82,6 +87,7 @@ export function Card() {
           <p class="text-sm font-medium">30-12-2022</p>
         </div>
       </div>
+      {isModalOpen() && <Modal setIsOpen={setIsModalOpen} />}
     </div>
   );
 }

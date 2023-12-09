@@ -1,5 +1,5 @@
 {
-  "name": "task-todo-dashboard-app",
+  "name": "task-dashboard-app",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@solid-primitives/upload": "^0.0.114",
     "solid-js": "^1.8.7"
   },
   "devDependencies": {
